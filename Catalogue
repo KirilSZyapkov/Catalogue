@@ -1,0 +1,32 @@
+function catalogue(input) {
+    let myCatalogueArr = [];
+    let newCatalogue = [];
+    
+    for (let line of input) {
+        myCatalogueArr.push(line.split(` : `));
+    }
+    myCatalogueArr.sort((a, b) => a[0].localeCompare(b[0]));
+
+    for (let a = 0; a < myCatalogueArr.length; a++) {
+        for (let b = 0; b < 1; b++) {
+            let first = myCatalogueArr[a][b][0];
+            if (!newCatalogue.includes(first)) {
+                newCatalogue.push(first);
+            }
+        }
+    }
+    for (let a = 0; a < newCatalogue.length; a++) {
+        newCatalogue[a] = [...newCatalogue[a]];
+    }
+
+    for (let a = 0; a < newCatalogue.length; a++) {
+        console.log(newCatalogue[a][0]);
+        for (let b = 0; b < myCatalogueArr.length;b++) {
+            let letterFirst = newCatalogue[a][0];
+            let letterSecond = myCatalogueArr[b][0][0];
+            if(letterFirst==letterSecond){
+                console.log(`   ${myCatalogueArr[b][0]}: ${myCatalogueArr[b][1]}`);
+            }
+        }
+    }
+}
