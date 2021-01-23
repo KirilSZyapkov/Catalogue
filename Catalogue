@@ -15,12 +15,9 @@ function catalogue(input) {
             }
         }
     }
+   
     for (let a = 0; a < newCatalogue.length; a++) {
-        newCatalogue[a] = [...newCatalogue[a]];
-    }
-
-    for (let a = 0; a < newCatalogue.length; a++) {
-        console.log(newCatalogue[a][0]);
+        console.log(newCatalogue[a]);
         for (let b = 0; b < myCatalogueArr.length;b++) {
             let letterFirst = newCatalogue[a][0];
             let letterSecond = myCatalogueArr[b][0][0];
